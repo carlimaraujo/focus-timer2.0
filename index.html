@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Temporizador estilo pomodoro com opções de sons como: chuva, floresta, cafeteria e lareira"
+    />
+    <title>Focus Timer</title>
+    <link rel="shortcut icon" href="./assets/fav-icon.svg" type="image/x-icon" class="">
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="./src/main.js  " defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="timer">
+        <section id="time">
+          <span id="minutes"></span>
+          <span>:</span>
+          <span id="seconds"></span>
+        </section>
+
+        <section id="controls">
+          <button id="play" data-action="toggleRunning" class="ph-bold ph-play-circle"><span class="sr-only">Iniciar timer</span></button>
+          <button id="pause" data-action="toggleRunning" class="ph-bold ph-pause-circle" ><span class="sr-only">Pausar timer</span></button>
+          <button id="stop" data-action="reset" class="ph-bold ph-stop-circle"><span class="sr-only">Parar timer</span></button>
+          <button id="add-time" data-action="addTime" class="ph-bold ph-plus-circle"><span class="sr-only">Adicionar 5 minutos</span></button>
+          <button id="decrease-time" data-action="decreaseTime" class="ph-bold ph-minus-circle"><span class="sr-only">Diminuir 5 minutos</span></button>
+        </section>
+      </div>
+
+      <div id="sounds">
+        <button id="forest-sound" data-sound="playForest"><span class="sr-only">Sons de floresta</span></button>
+        <button id="rain-sound" data-sound="playRain"><span class="sr-only">Sons de chuva</span></button>
+        <button id="cafeteria-sound" data-sound="playCafeteria"><span class="sr-only">Sons de cafeteria</span></button>
+        <button id="fireplace-sound" data-sound="playFireplace"><span class="sr-only">Sons de lareira</span></button>
+      </div>
+    </div>
+  </body>
+</html>

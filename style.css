@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-color: #fff;
+  --text-color: #323238;
+  --bg-card: #e1e1e6;
+  --bg-card-selected: #02799d;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  background: var(--bg-color);
+}
+
+#app {
+  display: flex;
+  gap: 19.2rem;
+}
+
+#timer {
+  display: grid;
+  text-align: center;
+  gap: 2.2rem;
+}
+
+#time {
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 12.6166rem;
+  font-weight: 500;
+  display: inline-flex;
+  margin-top: auto;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls button,
+#sounds button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#controls button {
+  font-size: 4.8rem;
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  place-content: center;
+}
+
+#sounds button {
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+  background-color: var(--bg-card);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  place-content: center;
+
+  transition: .3s;
+}
+
+#sounds button:hover{
+  transform: scale(1.1);
+}
+
+#forest-sound {
+  background-image: url("./assets/forest.svg");
+}
+
+.playForest #forest-sound{
+  background-image: url("./assets/forest-selected.svg");
+}
+
+#rain-sound {
+  background-image: url("./assets/rain.svg");
+}
+
+.playRain #rain-sound {
+  background-image: url("./assets/rain-selected.svg");
+}
+
+#cafeteria-sound{
+  background-image: url("./assets/cafeteria.svg");
+}
+
+.playCafeteria #cafeteria-sound{
+  background-image: url("./assets/cafeteria-selected.svg");
+}
+
+#fireplace-sound{
+  background-image: url("./assets/fireplace.svg");
+}
+
+.playFireplace #fireplace-sound{
+  background-image: url("./assets/fireplace-selected.svg");
+}
+
+.playForest #forest-sound,
+.playRain #rain-sound,
+.playCafeteria #cafeteria-sound,
+.playFireplace #fireplace-sound{
+  background-color: var(--bg-card-selected);
+}
+
+.running #play,
+html:not(.running) #pause {
+  display: none;
+}
+
+@media (width < 940px) {
+  #app {
+    gap: 8rem;
+  }
+}
+
+@media (width < 768px) {
+  #app {
+    flex-direction: column;
+  }
+}
